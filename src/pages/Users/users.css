@@ -1,0 +1,71 @@
+/* Users page */
+.users-page {
+  width: 100%;
+}
+
+/* Page header */
+.users-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 24px;
+}
+
+/* Remove default Title margin */
+.users-page-header .ant-typography {
+  margin-bottom: 4px;
+}
+
+/* Users card */
+.users-card {
+  border: 1px solid #e5e7eb;
+}
+
+/* Search/filter area */
+.users-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 20px;
+}
+
+/* Search input */
+.users-toolbar .ant-input-affix-wrapper {
+  width: 320px;
+}
+
+/* Status filter */
+.users-toolbar .ant-select {
+  width: 160px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+  .users-page-header {
+    align-items: flex-start;
+    gap: 16px;
+    flex-direction: column;
+  }
+
+  .users-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .users-toolbar .ant-input-affix-wrapper,
+  .users-toolbar .ant-select {
+    width: 100%;
+  }
+}
+
+/* Add User form buttons */
+.user-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+
+  margin-top: 24px;
+}

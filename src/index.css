@@ -1,0 +1,53 @@
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+/* Remove default browser spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   HTML & BODY
+========================================= */
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+
+  /* Prevent horizontal scrolling */
+  overflow-x: hidden;
+}
+
+
+/* =========================================
+   ROOT REACT CONTAINER
+========================================= */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  background: #f8fafc;
+
+  color: #111827;
+}

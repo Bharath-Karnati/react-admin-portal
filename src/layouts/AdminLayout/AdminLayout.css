@@ -1,0 +1,126 @@
+/* =========================================================
+   MAIN ADMIN LAYOUT
+   ========================================================= */
+
+.admin-layout {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+
+  display: flex;
+
+  background: #f8fafc;
+
+  /* Prevent the complete browser page from scrolling */
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   RIGHT SIDE LAYOUT
+   Contains Header + Content
+   ========================================================= */
+
+.admin-layout > .ant-layout {
+  width: calc(100% - 240px);
+  height: 100vh;
+  min-width: 0;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #f8fafc;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   Only this section should scroll
+   ========================================================= */
+
+.admin-content {
+  flex: 1;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+
+  padding: 28px;
+
+  background: #f8fafc;
+
+  /* Content scroll */
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  /* Smooth scrolling */
+  scroll-behavior: smooth;
+}
+
+
+/* =========================================================
+   CUSTOM CONTENT SCROLLBAR
+   ========================================================= */
+
+.admin-content::-webkit-scrollbar {
+  width: 7px;
+}
+
+.admin-content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.admin-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.admin-content::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+  .admin-content {
+    padding: 24px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .admin-layout > .ant-layout {
+    width: calc(100% - 200px);
+  }
+
+  .admin-content {
+    padding: 20px 16px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 576px) {
+
+  .admin-content {
+    padding: 16px 12px;
+  }
+
+}

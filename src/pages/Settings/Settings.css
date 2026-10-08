@@ -1,0 +1,544 @@
+/* =========================================
+   SETTINGS PAGE
+========================================= */
+
+.settings-page {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.settings-header {
+  margin-bottom: 24px;
+}
+
+
+.settings-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #6b7280;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 1.2px;
+}
+
+
+.settings-header h2 {
+  margin: 0 0 4px;
+
+  color: #111111;
+
+  font-size: 26px;
+  font-weight: 600;
+}
+
+
+.settings-header > div > .ant-typography-secondary {
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   SETTINGS CARDS
+========================================= */
+
+.settings-card {
+  margin-bottom: 18px;
+
+  border: 1px solid #e5e7eb !important;
+
+  border-radius: 10px !important;
+
+  background: #ffffff;
+
+  box-shadow: none !important;
+}
+
+
+.settings-card .ant-card-body {
+  padding: 24px;
+}
+
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+.settings-section-header {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+.section-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 7px;
+
+  background: #f3f4f6;
+
+  color: #111111;
+
+  font-size: 17px;
+}
+
+
+.settings-section-header h4 {
+  margin: 0 0 2px;
+
+  color: #111111;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+.settings-section-header .ant-typography-secondary {
+  font-size: 12px;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.settings-card .ant-divider {
+  margin: 20px 0;
+
+  border-color: #f0f0f0;
+}
+
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.profile-preview {
+  min-height: 100px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 18px;
+
+  background: #fafafa;
+
+  border: 1px solid #eeeeee;
+
+  border-radius: 8px;
+}
+
+
+.profile-avatar {
+  background: #111111 !important;
+
+  color: #ffffff !important;
+}
+
+
+.profile-preview > div:last-child {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+
+.profile-name {
+  color: #111111;
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   FORM INPUTS
+========================================= */
+
+.settings-card .ant-form-item {
+  margin-bottom: 0;
+}
+
+
+.settings-card .ant-form-item-label > label {
+  color: #374151;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+
+.settings-card .ant-input,
+.settings-card .ant-input-affix-wrapper {
+  min-height: 38px;
+
+  border-color: #d1d5db;
+
+  border-radius: 6px;
+
+  font-size: 13px;
+}
+
+
+.settings-card .ant-input:focus,
+.settings-card .ant-input-affix-wrapper:focus,
+.settings-card .ant-input-affix-wrapper-focused {
+  border-color: #111111;
+
+  box-shadow: 0 0 0 2px rgba(17, 17, 17, 0.06);
+}
+
+
+/* =========================================
+   SETTINGS OPTIONS
+========================================= */
+
+.settings-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  min-height: 60px;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid #f0f0f0;
+}
+
+
+.settings-option:last-child {
+  border-bottom: none;
+
+  padding-bottom: 0;
+}
+
+
+.option-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+
+  min-width: 0;
+}
+
+
+.option-content .ant-typography {
+  font-size: 13px;
+}
+
+
+.option-content .ant-typography-secondary {
+  color: #9ca3af;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   SWITCH
+========================================= */
+
+.settings-card .ant-switch {
+  flex-shrink: 0;
+}
+
+
+.settings-card .ant-switch.ant-switch-checked {
+  background: #111111;
+}
+
+
+/* =========================================
+   APPEARANCE
+========================================= */
+
+.appearance-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+
+.appearance-option .ant-radio-group {
+  flex-shrink: 0;
+}
+
+
+.appearance-option .ant-radio-wrapper {
+  color: #374151;
+
+  font-size: 13px;
+}
+
+
+.appearance-option .ant-radio-checked .ant-radio-inner {
+  border-color: #111111;
+}
+
+
+.appearance-option
+.ant-radio-inner::after {
+  background: #111111;
+}
+
+
+.appearance-symbol {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   SECURITY
+========================================= */
+
+.security-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+
+.security-row .ant-btn {
+  flex-shrink: 0;
+
+  height: 36px;
+
+  border-color: #d1d5db;
+
+  border-radius: 6px;
+
+  color: #111111;
+
+  font-size: 13px;
+}
+
+
+.security-row .ant-btn:hover {
+  border-color: #111111 !important;
+
+  color: #111111 !important;
+}
+
+
+.security-info {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 20px;
+
+  padding: 12px;
+
+  background: #fafafa;
+
+  border: 1px solid #eeeeee;
+
+  border-radius: 6px;
+}
+
+
+.security-info .anticon {
+  color: #6b7280;
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.settings-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-bottom: 30px;
+}
+
+
+.settings-actions .ant-btn {
+  height: 38px;
+
+  padding: 0 18px;
+
+  border-radius: 6px;
+
+  font-size: 13px;
+}
+
+
+.settings-actions .ant-btn-default {
+  border-color: #d1d5db;
+
+  color: #374151;
+}
+
+
+.save-button {
+  background: #111111 !important;
+
+  border-color: #111111 !important;
+
+  box-shadow: none !important;
+}
+
+
+.save-button:hover {
+  background: #333333 !important;
+
+  border-color: #333333 !important;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .settings-page {
+    max-width: 100%;
+  }
+
+
+  .settings-card .ant-card-body {
+    padding: 20px;
+  }
+
+
+  .profile-preview {
+    margin-bottom: 20px;
+  }
+
+
+  .appearance-option {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+
+  .security-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+
+  .security-row .ant-btn {
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 576px) {
+
+  .settings-header h2 {
+    font-size: 23px;
+  }
+
+
+  .settings-card .ant-card-body {
+    padding: 16px;
+  }
+
+
+  .settings-section-header {
+    align-items: flex-start;
+  }
+
+
+  .settings-option {
+    align-items: flex-start;
+  }
+
+
+  .settings-actions {
+    justify-content: stretch;
+  }
+
+
+  .settings-actions .ant-btn {
+    flex: 1;
+  }
+
+}
+
+/* =========================================
+   PASSWORD MODAL
+========================================= */
+
+.password-modal-description {
+  margin-bottom: 22px;
+}
+
+
+.password-modal-description .ant-typography {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+.password-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 10px;
+}
+
+
+.password-modal-actions .ant-btn {
+  height: 36px;
+
+  border-radius: 6px;
+
+  font-size: 13px;
+}
+
+
+.password-modal-actions .save-button {
+  background: #111111 !important;
+
+  border-color: #111111 !important;
+}
+
+
+.password-modal-actions .save-button:hover {
+  background: #333333 !important;
+
+  border-color: #333333 !important;
+}

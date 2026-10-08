@@ -1,0 +1,56 @@
+/* Main reports page */
+.reports-page {
+  width: 100%;
+}
+
+/* Page header */
+.reports-header {
+  margin-bottom: 24px;
+}
+
+.reports-header h2 {
+  margin-bottom: 4px !important;
+}
+
+/* Summary cards */
+.report-stat-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+/* Statistic number */
+.report-stat-card .ant-statistic-content {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* Filters */
+.report-filter-card {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+/* Table */
+.report-table-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+/* Table heading */
+.report-table-header {
+  margin-bottom: 20px;
+}
+
+.report-table-header h4 {
+  margin-bottom: 4px !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .report-filter-card .ant-select,
+  .report-filter-card .ant-picker {
+    width: 100% !important;
+  }
+}

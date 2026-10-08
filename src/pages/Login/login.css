@@ -1,0 +1,99 @@
+/* Main Login page container */
+.login-container {
+  min-height: 100vh;
+
+  /* Center the login card horizontally and vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Space around the card on small screens */
+  padding: 20px;
+
+  /* Page background */
+  background: #f5f7fa;
+}
+
+
+/* Login card */
+.login-card {
+  width: 400px;
+  padding: 40px;
+
+  /* White card background */
+  background: #ffffff;
+
+  /* Rounded corners */
+  border-radius: 12px;
+
+  /* Subtle shadow */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Logo and heading section */
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+
+/* Application logo */
+.brand-logo {
+  width: 55px;
+  height: 55px;
+
+  /* Center "AP" inside the logo */
+  margin: 0 auto 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Logo appearance */
+  background: #1677ff;
+  color: white;
+  border-radius: 12px;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+
+/* Login form */
+.login-form {
+  margin-top: 20px;
+}
+
+
+/* Remember me and Forgot Password section */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 24px;
+}
+
+
+/* Register link section */
+.register-link {
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+/* Responsive design for mobile screens */
+@media (max-width: 480px) {
+
+  /* Reduce page padding on small screens */
+  .login-container {
+    padding: 15px;
+  }
+
+  /* Make card use the available screen width */
+  .login-card {
+    width: 100%;
+    padding: 30px 20px;
+  }
+}

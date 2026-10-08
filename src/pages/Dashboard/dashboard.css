@@ -1,0 +1,692 @@
+/* =========================================
+   DASHBOARD
+========================================= */
+
+.dashboard {
+  width: 100%;
+  max-width: 1600px;
+}
+
+
+/* =========================================
+   WELCOME SECTION
+========================================= */
+
+.dashboard-welcome {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding: 24px 28px;
+  margin-bottom: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+
+/* Left side */
+
+.dashboard-welcome > div:first-child {
+  min-width: 0;
+}
+
+
+.welcome-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #6b7280;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 1.2px;
+}
+
+
+.dashboard-welcome h2 {
+  margin: 0 0 4px;
+
+  color: #111111;
+
+  font-size: 24px;
+  font-weight: 600;
+
+  line-height: 1.3;
+}
+
+
+.welcome-description {
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+
+/* Add Employee button */
+
+.dashboard-welcome .ant-btn {
+  flex-shrink: 0;
+
+  height: 38px;
+
+  padding: 0 18px;
+
+  background: #111111;
+  border-color: #111111;
+
+  border-radius: 6px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  box-shadow: none;
+}
+
+
+.dashboard-welcome .ant-btn:hover {
+  background: #333333 !important;
+  border-color: #333333 !important;
+}
+
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+.dashboard-stats {
+  margin-bottom: 22px;
+}
+
+
+/* Statistics card */
+
+.stat-card {
+  height: 100%;
+  min-height: 158px;
+
+  border: 1px solid #e5e7eb !important;
+  border-radius: 10px !important;
+
+  background: #ffffff;
+
+  box-shadow: none !important;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.stat-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #cfcfcf !important;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05) !important;
+}
+
+
+/* Stat icon */
+
+.stat-icon {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 14px;
+
+  border-radius: 7px;
+
+  color: #111111 !important;
+  background: #f3f4f6 !important;
+
+  font-size: 17px;
+}
+
+
+/* Remove different icon colors */
+
+.stat-icon.blue,
+.stat-icon.green,
+.stat-icon.red,
+.stat-icon.purple {
+  color: #111111 !important;
+  background: #f3f4f6 !important;
+}
+
+
+/* Statistic title */
+
+.stat-card .ant-statistic-title {
+  margin-bottom: 3px;
+
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+
+/* Statistic number */
+
+.stat-card .ant-statistic-content {
+  color: #111111;
+
+  font-size: 25px;
+  font-weight: 600;
+
+  line-height: 1.2;
+}
+
+
+/* Description */
+
+.stat-description {
+  display: block;
+
+  margin-top: 8px;
+
+  color: #9ca3af;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   OVERVIEW SECTION
+========================================= */
+
+.dashboard-overview {
+  margin-bottom: 22px;
+}
+
+
+/* Common dashboard cards */
+
+.dashboard-card {
+  height: 100%;
+
+  border: 1px solid #e5e7eb !important;
+  border-radius: 10px !important;
+
+  background: #ffffff;
+
+  box-shadow: none !important;
+}
+
+
+/* Card header */
+
+.dashboard-card .ant-card-head {
+  min-height: 54px;
+
+  padding: 0 22px;
+
+  border-bottom: 1px solid #f0f0f0;
+}
+
+
+.dashboard-card .ant-card-head-title {
+  color: #111111;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+/* Card body */
+
+.dashboard-card .ant-card-body {
+  padding: 22px;
+}
+
+
+/* =========================================
+   EMPLOYEE OVERVIEW
+========================================= */
+
+.overview-center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 5px 0 18px;
+}
+
+
+.overview-center .ant-progress-circle {
+  margin-bottom: 8px;
+}
+
+
+.overview-center h4 {
+  margin: 8px 0 2px;
+
+  color: #111111;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+.overview-center .ant-typography-secondary {
+  color: #9ca3af;
+
+  font-size: 13px;
+}
+
+
+/* Make progress black */
+
+.overview-center .ant-progress-circle-path {
+  stroke: #111111 !important;
+}
+
+
+.overview-center .ant-progress-text {
+  color: #111111 !important;
+
+  font-size: 20px;
+  font-weight: 600;
+}
+
+
+/* Summary */
+
+.overview-summary {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+
+  padding-top: 16px;
+
+  border-top: 1px solid #f0f0f0;
+}
+
+
+.overview-summary > div {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+
+.overview-summary strong {
+  margin-left: auto;
+
+  color: #111111;
+
+  font-weight: 600;
+}
+
+
+/* Dots */
+
+.summary-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #111111 !important;
+}
+
+
+.summary-dot.inactive {
+  background: #d1d5db !important;
+}
+
+
+/* =========================================
+   DEPARTMENT OVERVIEW
+========================================= */
+
+.department-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+
+.department-item {
+  width: 100%;
+}
+
+
+.department-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 6px;
+}
+
+
+.department-info .ant-typography {
+  font-size: 13px;
+}
+
+
+.department-info .ant-typography:first-child {
+  color: #111111;
+}
+
+
+.department-info .ant-typography:last-child {
+  color: #9ca3af;
+}
+
+
+/* Progress */
+
+.department-progress {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.department-progress .ant-progress {
+  flex: 1;
+}
+
+
+.department-progress .ant-progress-inner {
+  background: #eeeeee;
+}
+
+
+.department-progress .ant-progress-bg {
+  background: #111111 !important;
+}
+
+
+.department-progress > .ant-typography {
+  width: 35px;
+
+  color: #6b7280;
+
+  font-size: 12px;
+
+  text-align: right;
+}
+
+
+/* =========================================
+   RECENT EMPLOYEES
+========================================= */
+
+.recent-employees {
+  margin-bottom: 22px;
+}
+
+
+/* Table */
+
+.recent-employees .ant-table {
+  font-size: 13px;
+}
+
+
+.recent-employees .ant-table-thead > tr > th {
+  padding: 12px 16px;
+
+  background: #fafafa !important;
+
+  color: #6b7280;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+
+.recent-employees .ant-table-tbody > tr > td {
+  padding: 13px 16px;
+
+  color: #374151;
+
+  border-bottom: 1px solid #f0f0f0;
+}
+
+
+.recent-employees .ant-table-tbody > tr:hover > td {
+  background: #fafafa !important;
+}
+
+
+/* View all */
+
+.recent-employees .ant-card-extra .ant-btn {
+  padding: 0;
+
+  color: #111111;
+
+  font-size: 13px;
+}
+
+
+.recent-employees .ant-card-extra .ant-btn:hover {
+  color: #555555;
+}
+
+
+/* Employee cell */
+
+.employee-cell {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.employee-avatar {
+  width: 32px;
+  height: 32px;
+
+  background: #f3f4f6 !important;
+
+  color: #111111 !important;
+
+  font-size: 14px;
+}
+
+
+.employee-name {
+  color: #111111;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+
+.employee-cell .ant-typography {
+  font-size: 11px;
+}
+
+
+/* Status tag */
+
+.recent-employees .ant-tag {
+  margin: 0;
+
+  border: none;
+
+  border-radius: 4px;
+
+  font-size: 11px;
+}
+
+
+/* =========================================
+   QUICK ACTIONS
+========================================= */
+
+.quick-actions {
+  margin-bottom: 20px;
+}
+
+
+.quick-actions h4 {
+  margin: 0 0 12px;
+
+  color: #111111;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+/* Quick action card */
+
+.quick-action-card {
+  min-height: 72px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
+
+  background: #ffffff;
+
+  box-shadow: none !important;
+}
+
+
+.quick-action-card:hover {
+  border-color: #bdbdbd !important;
+}
+
+
+.quick-action-card > .anticon {
+  color: #111111;
+
+  font-size: 18px;
+}
+
+
+.quick-action-card > div {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+
+.quick-action-card > div .ant-typography:first-child {
+  color: #111111;
+
+  font-size: 13px;
+}
+
+
+.quick-action-card > div .ant-typography:last-child {
+  color: #9ca3af;
+
+  font-size: 11px;
+}
+
+
+.quick-action-card .anticon:last-child {
+  color: #9ca3af;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 992px) {
+
+  .dashboard-welcome {
+    padding: 22px;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .dashboard-welcome {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 16px;
+  }
+
+
+  .dashboard-welcome .ant-btn {
+    width: 100%;
+  }
+
+
+  .dashboard-welcome h2 {
+    font-size: 22px;
+  }
+
+
+  .stat-card {
+    min-height: 145px;
+  }
+
+}
+
+
+@media (max-width: 576px) {
+
+  .dashboard-welcome {
+    padding: 18px;
+  }
+
+
+  .dashboard-welcome h2 {
+    font-size: 21px;
+  }
+
+
+  .welcome-description {
+    font-size: 13px;
+  }
+
+
+  .stat-card .ant-statistic-content {
+    font-size: 23px;
+  }
+
+
+  .overview-summary {
+    grid-template-columns: 1fr;
+  }
+
+}
