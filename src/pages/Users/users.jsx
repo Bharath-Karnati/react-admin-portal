@@ -32,6 +32,11 @@ import { useEmployees } from "../../context/EmployeeContext";
 
 import dayjs from "dayjs";
 
+
+import customParseFormat from "dayjs/plugin/customParseFormat";
+
+dayjs.extend(customParseFormat);
+
 // Import page CSS
 import "./Users.css";
 
@@ -42,6 +47,8 @@ function Users() {
 
   const {
     employees,
+    addEmployee,
+    updateEmployee,
     deleteEmployee,
   } = useEmployees();
 
@@ -97,32 +104,40 @@ function Users() {
 /*
   Add a new user to the table.
 */
+  // Add a new user
 const handleAddUser = (values) => {
-
-  // Create a new user object
   const newUser = {
-    key: Date.now(),
     name: values.name,
     email: values.email,
     role: values.role,
     status: values.status,
-     joinedDate: values.joinedDate.format("YYYY-MM-DD"),
+    joiningDate: values.joiningDate.format("YYYY-MM-DD"),
   };
 
-  // Add new user to the existing users
-  setUsers((currentUsers) => [
-    ...currentUsers,
-    newUser,
-  ]);
+  // Add the user through EmployeeContext
+  addEmployee(newUser);
 
-  // Show success message
   message.success("User added successfully!");
 
-  // Clear form
   form.resetFields();
-
-  // Close modal
   setIsModalOpen(false);
+};
+
+
+// Convert a stored date string into a valid DatePicker value
+const parseJoiningDate = (date) => {
+  if (!date) {
+    return null;
+  }
+
+  // Try the date formats used in the application
+  const parsedDate = dayjs(
+    date,
+    ["YYYY-MM-DD", "DD-MM-YYYY", "DD/MM/YYYY"],
+    true
+  );
+
+  return parsedDate.isValid() ? parsedDate : null;
 };
 
 
@@ -130,22 +145,21 @@ const handleAddUser = (values) => {
   Open the Edit User modal
   with the selected user's existing data.
 */
+// Open the Edit User modal
 const handleEdit = (user) => {
-  // Store the selected user
   setEditingUser(user);
-
-  // Open the modal
   setIsModalOpen(true);
 
-  // Fill the form with existing user data
   form.setFieldsValue({
     name: user.name,
     email: user.email,
     role: user.role,
     status: user.status,
 
-    // Convert string date back into a DatePicker value
-    joiningDate: dayjs(user.joiningDate),
+    // Support the old joinedDate property too
+    joiningDate: parseJoiningDate(
+      user.joiningDate || user.joinedDate
+    ),
   });
 };
 
@@ -153,41 +167,28 @@ const handleEdit = (user) => {
 /*
   Update an existing user.
 */
+// Update an existing user
 const handleUpdateUser = (values) => {
+  if (!editingUser) {
+    message.error("No user selected for update.");
+    return;
+  }
 
-  // Update the selected user
-  setUsers((currentUsers) =>
-    currentUsers.map((user) => {
+  const updatedData = {
+    name: values.name,
+    email: values.email,
+    role: values.role,
+    status: values.status,
+    joiningDate: values.joiningDate.format("YYYY-MM-DD"),
+  };
 
-      // Find the user being edited
-      if (user.key === editingUser.key) {
-        return {
-          ...user,
-          name: values.name,
-          email: values.email,
-          role: values.role,
-          status: values.status,
-          joiningDate: values.joiningDate.format(
-            "YYYY-MM-DD"
-          ),
-        };
-      }
+  // Update the selected user through EmployeeContext
+  updateEmployee(editingUser.key, updatedData);
 
-      // Keep other users unchanged
-      return user;
-    })
-  );
-
-  // Show success message
   message.success("User updated successfully!");
 
-  // Clear form
   form.resetFields();
-
-  // Clear editing state
   setEditingUser(null);
-
-  // Close modal
   setIsModalOpen(false);
 };
 
@@ -286,7 +287,11 @@ const handleUpdateUser = (values) => {
         <Button
           type="primary"
           icon={<PlusOutlined />}
-          onClick={() => setIsModalOpen(true)}
+          onClick={() => {
+            form.resetFields();
+            setEditingUser(null);
+            setIsModalOpen(true);
+          }}
         >
           Add User
         </Button>
@@ -467,7 +472,7 @@ const handleUpdateUser = (values) => {
             >
               <DatePicker
                 style={{ width: "100%" }}
-                format="YYYY-MM-DD"
+                format="DD-MM-YYYY"
                 placeholder="Select joining date"
               />
             </Form.Item>
@@ -476,14 +481,14 @@ const handleUpdateUser = (values) => {
             <div className="user-form-actions">
 
             <Button
-                onCancel={() => {
-                setIsModalOpen(false);
-                form.resetFields();
-                setEditingUser(null);
-              }}
-            >
-                Cancel
-            </Button>
+            onClick={() => {
+              setIsModalOpen(false);
+              form.resetFields();
+              setEditingUser(null);
+            }}
+          >
+            Cancel
+          </Button>
 
             <Button
               type="primary"
