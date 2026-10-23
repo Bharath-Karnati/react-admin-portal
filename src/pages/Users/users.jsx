@@ -110,6 +110,7 @@ const handleAddUser = (values) => {
     name: values.name,
     email: values.email,
     role: values.role,
+    department: values.department,
     status: values.status,
     joiningDate: values.joiningDate.format("YYYY-MM-DD"),
   };
@@ -154,6 +155,7 @@ const handleEdit = (user) => {
     name: user.name,
     email: user.email,
     role: user.role,
+    department: user.department,
     status: user.status,
 
     // Support the old joinedDate property too
@@ -178,6 +180,7 @@ const handleUpdateUser = (values) => {
     name: values.name,
     email: values.email,
     role: values.role,
+    department: values.department,
     status: values.status,
     joiningDate: values.joiningDate.format("YYYY-MM-DD"),
   };
@@ -431,6 +434,30 @@ const handleUpdateUser = (values) => {
                 },
                 ]}
             />
+            </Form.Item>
+
+
+            {/* Department */}
+            <Form.Item
+              label="Department"
+              name="department"
+              rules={[
+                {
+                  required: true,
+                  message: "Please select a department",
+                },
+              ]}
+            >
+              <Select
+                placeholder="Select department"
+                options={[
+                  { value: "Engineering", label: "Engineering" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "HR", label: "HR" },
+                  { value: "Sales", label: "Sales" },
+                  { value: "Marketing", label: "Marketing" },
+                ]}
+              />
             </Form.Item>
 
             {/* Status */}

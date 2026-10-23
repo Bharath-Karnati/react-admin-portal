@@ -77,15 +77,23 @@ function Reports() {
 
   // Filter state
   const [department, setDepartment] = useState("all");
+  const [selectedDate, setSelectedDate] = useState(null);
 
   // Filter employees based on department
-  const filteredEmployees =
-    department === "all"
-      ? employees
-      : employees.filter(
-          (employee) =>
-            employee.department === department
-        );
+  // Filter employees by department and joining date
+const filteredEmployees = employees.filter((employee) => {
+  // Check department
+  const matchesDepartment =
+    department === "all" ||
+    employee.department === department;
+
+  // Check joining date
+  const matchesDate =
+    !selectedDate ||
+    employee.joiningDate === selectedDate.format("YYYY-MM-DD");
+
+  return matchesDepartment && matchesDate;
+});
 
 
   return (
@@ -233,7 +241,11 @@ function Reports() {
           />
 
           <DatePicker
-            placeholder="Select date"
+            placeholder="Select joining date"
+            value={selectedDate}
+            onChange={(date) => setSelectedDate(date)}
+            format="YYYY-MM-DD"
+            allowClear
           />
 
         </Space>
