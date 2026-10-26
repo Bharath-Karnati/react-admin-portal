@@ -1,25 +1,19 @@
-// Import Navigate and Outlet from React Router
-import { Navigate, Outlet } from "react-router-dom";
-
-// Import our authentication check
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { isAuthenticated } from "../services/authService";
 
 function ProtectedRoute() {
-  // Check whether an admin is currently logged in
-  const loggedIn = isAuthenticated();
+  const location = useLocation();
 
-  /*
-    If the admin is not logged in,
-    redirect them to the Login page.
-  */
-  if (!loggedIn) {
-    return <Navigate to="/login" replace />;
+  if (!isAuthenticated()) {
+    return (
+      <Navigate
+        to="/login"
+        replace
+        state={{ from: location }}
+      />
+    );
   }
 
-  /*
-    If the admin is logged in,
-    display the protected page.
-  */
   return <Outlet />;
 }
 

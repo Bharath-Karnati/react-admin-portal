@@ -11,6 +11,10 @@ import { useNavigate } from "react-router-dom";
 
 import { loginAdmin } from "../../services/authService";
 
+import { useEffect } from "react";
+
+import { logoutAdmin } from "../../services/authService";
+
 // Import CSS file for Login page styling
 import "./Login.css";
 
@@ -18,8 +22,11 @@ import "./Login.css";
 const { Title, Text, Link } = Typography;
 
 
-// Login component
 function Login() {
+    useEffect(() => {
+    // Clear the existing session whenever the Login page opens
+    logoutAdmin();
+  }, []);
   const navigate = useNavigate();
   // This function executes when the login form is successfully submitted
   const handleLogin = (values) => {
@@ -46,7 +53,7 @@ function Login() {
   return (
     <div className="login-container">
 
-      {/* Login card/container */}
+      
       <div className="login-card">
 
         {/* -----------------------------
