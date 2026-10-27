@@ -332,26 +332,26 @@ function Header() {
   // USER MENU ACTION
   // ==========================================
 
-  const handleUserMenuClick = ({ key }) => {
+  
+const handleUserMenuClick = ({ key }) => {
+  // Profile
+  if (key === "profile") {
+    navigate("/dashboard/settings");
+  }
 
-    // Profile
-    if (key === "profile") {
+  // Logout with confirmation
+  if (key === "logout") {
+    const shouldLogout = window.confirm(
+      "Are you sure you want to log out?"
+    );
 
-      navigate("/dashboard/settings");
-
-    }
-
-
-    // Logout
-    if (key === "logout") {
-
+    if (shouldLogout) {
       logoutAdmin();
-
-      navigate("/login");
-
+      navigate("/login", { replace: true });
     }
+  }
+};
 
-  };
 
 
   // ==========================================

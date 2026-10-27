@@ -40,6 +40,7 @@ function Login() {
   if (result.success) {
     message.success("Login successful!");
 
+    navigate("/dashboard", { replace: true });
     // Go to Dashboard
     navigate("/dashboard");
   } else {
